@@ -15,10 +15,10 @@ args = parser.parse_args() # Parse command-line arguments
 args.seq = args.seq.upper() # Sequence to uppercase
 
 if re.search('^[ACGTU]+$', args.seq): # Search nucleotide letters
-    if re.search('T', args.seq):
-        print ('The sequence is DNA') # Contains T -> DNA
-    elif re.search('U', args.seq):
-        print ('The sequence is RNA') # Contains U -> RNA
+    if re.search('T', args.seq) and not re.search('U', args.seq):
+        print ('The sequence is DNA') # Contains T and not U -> DNA
+    elif re.search('U', args.seq) and not re.search('T', args.seq):
+        print ('The sequence is RNA') # Contains U and not T -> RNA
     else:
         print ('The sequence can be DNA or RNA') # Not T or U
 else:
