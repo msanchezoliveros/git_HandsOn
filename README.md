@@ -9,5 +9,5 @@ python seqClass.py -s <sequence> [-m <motif>]
 ```
 
 ## Arguments
--s, --seq (required): Input sequence
+-s, --seq (required): Input sequence<br>
 -m, --motif (optional): Motif to search within the sequence
